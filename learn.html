@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unimate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: blue;       
+            text-align: center; 
+            font-family: Arial, sans-serif;
+            margin-bottom: 30px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            background-color: #614caf;
+            padding: 30px;
+            margin: 20px;
+            color: white;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            box-shadow: 0 0 0 2px #04AA6D;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #038a5a;
+        }
+
+        .password-requirements {
+            font-size: 12px;
+            color: #e0e0e0;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unimate</h1>
+    
+    <form action="/login" method="POST">
+        <div class="form-group">
+            
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+        
+        <div class="form-group">
+            
+            <input type="password" id="password" name="password" placeholder="Enter your password" 
+       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+       title="Password must be at least 8 characters and include uppercase, lowercase, and a number" 
+       required>
+<div class="password-requirements">
+    Password must be 8+ characters with uppercase, lowercase, and a number
+</div>
+        <script src="learnserver.js"></script>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
